@@ -14,6 +14,8 @@ import { JwtInterceptor } from './interceptors/jwt.interceptor';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MeComponent } from './components/me/me.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 const materialModule = [
   MatButtonModule,
@@ -21,6 +23,7 @@ const materialModule = [
   MatIconModule,
   MatSnackBarModule,
   MatToolbarModule,
+  ReactiveFormsModule,
 ]
 
 @NgModule({
@@ -35,6 +38,7 @@ const materialModule = [
     BrowserAnimationsModule, 
     FlexLayoutModule,
     HttpClientModule,
+    HttpClientTestingModule,
     ...materialModule
   ],
   providers: [

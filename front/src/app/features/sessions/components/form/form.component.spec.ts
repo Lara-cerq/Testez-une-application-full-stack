@@ -14,6 +14,7 @@ import { SessionService } from 'src/app/services/session.service';
 import { SessionApiService } from '../../services/session-api.service';
 
 import { FormComponent } from './form.component';
+import { Session } from '../../interfaces/session.interface';
 
 describe('FormComponent', () => {
   let component: FormComponent;
@@ -55,5 +56,20 @@ describe('FormComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should submit()', () => {
+    const session : Session = {
+      name: "",
+      description: "",
+      date: new Date,
+      teacher_id: 1,
+      users:[0]
+    }
+    component.sessionForm?.setValue(session);
+    fixture.detectChanges();
+    //asserts
+    expect(component.sessionForm?.valid).toBeTruthy();
+    component.submit();
   });
 });

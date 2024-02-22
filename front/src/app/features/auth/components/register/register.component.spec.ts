@@ -23,7 +23,10 @@ describe('RegisterComponent', () => {
     authServiceMock = { register : jest.fn()};
     await TestBed.configureTestingModule({
       declarations: [RegisterComponent],
-      providers: [{provide: AuthService, useValue: authServiceMock}],
+      providers: [
+        {provide: AuthService, useValue: authServiceMock},
+        {provide: AuthService},
+      ],
       imports: [
         BrowserAnimationsModule,
         HttpClientModule,
@@ -46,7 +49,7 @@ describe('RegisterComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should register', () => {
+  it('should register with mock', () => {
     //arrange
     const registerRequest : RegisterRequest = {
       email: 'test@test.com',
@@ -64,6 +67,24 @@ describe('RegisterComponent', () => {
     component.submit();
     //asserts
     expect(component.onError).toBeFalsy();
+  })
 
+  it('should register', () => {
+    //arrange
+    const registerRequest : RegisterRequest = {
+      email: 'test@test.com',
+      firstName: 'Test',
+      lastName: 'Test',
+      password: 'test'
+    }
+    component.form.setValue(registerRequest);
+    //act
+    fixture.detectChanges();
+    //asserts
+    expect(component.form.valid).toBeTruthy();
+    //act
+    component.submit();
+    //asserts
+    expect(component.onError).toBeFalsy();
   })
 });
