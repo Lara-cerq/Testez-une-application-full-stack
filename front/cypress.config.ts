@@ -4,6 +4,7 @@ export default defineConfig({
   videosFolder: 'cypress/videos',
   screenshotsFolder: 'cypress/screenshots',
   fixturesFolder: 'cypress/fixtures',
+  defaultCommandTimeout: 10000,
   video: false,
   e2e: {
     // We've imported your old cypress plugins here.
