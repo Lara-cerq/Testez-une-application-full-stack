@@ -81,7 +81,12 @@
 			<artifactId>mapstruct-processor</artifactId>
 			<version>1.5.1.Final</version>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<plugins>
@@ -115,6 +120,14 @@
 					<execution>
 						<id>report</id>
 						<phase>test</phase>
+						<configuration>
+						<excludes>
+							<exclude>com/openclassrooms/starterjwt/payload/request/*</exclude>
+							<exclude>com/openclassrooms/starterjwt/payload/response/*</exclude>
+							<exclude>com/openclassrooms/starterjwt/dto/*</exclude>
+							<exclude>com/openclassrooms/starterjwt/models/*</exclude>
+						</excludes>
+						</configuration>
 						<goals>
 							<goal>report</goal>
 						</goals>

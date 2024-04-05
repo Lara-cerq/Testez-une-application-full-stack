@@ -80,8 +80,6 @@ describe('DetailComponent', () => {
     fixture.detectChanges();
     //asserts
     expect(sessionApiServiceMock.delete).toHaveBeenCalledWith('1');
-    //expect(mockRouter.navigate).toHaveBeenCalledWith(['sessions']);
-   // expect(navigateSpy).toHaveBeenCalledWith(['sessions']);
   });
 });
 
