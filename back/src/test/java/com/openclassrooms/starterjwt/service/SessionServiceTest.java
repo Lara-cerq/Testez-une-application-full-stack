@@ -75,7 +75,6 @@ public class SessionServiceTest {
 
         Assertions.assertTrue(session.getUsers().isEmpty());
 
-
     }
 
 

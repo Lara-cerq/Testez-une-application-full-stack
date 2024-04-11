@@ -26,7 +26,7 @@ describe('SessionsService', () => {
   });
 
   it('should get detail session', () => {
-    service.detail("1").subscribe((result) => {
+      service.detail("1").subscribe((result) => {
       expect(result.name).toBe("yoga");
       })
       const mockRequest = httpMock.expectOne('api/session/1');

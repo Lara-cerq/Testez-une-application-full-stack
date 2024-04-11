@@ -110,7 +110,7 @@ public class SessionControllerTest {
     @Test
     @WithMockUser
     public void testDeleteSession() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.delete("/api/session/79"))
+        mockMvc.perform(MockMvcRequestBuilders.delete("/api/session/80"))
                 .andExpect(MockMvcResultMatchers.status().isOk());
         mockMvc.perform(MockMvcRequestBuilders.delete("/api/session/0"))
                 .andExpect(MockMvcResultMatchers.status().isNotFound());

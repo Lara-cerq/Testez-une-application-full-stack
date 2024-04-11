@@ -49,7 +49,7 @@ public class UserControllerTest {
     @Test
     @WithUserDetails("test3@test.com")
     public void testDeleteUser() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.delete("/api/user/70"))
+        mockMvc.perform(MockMvcRequestBuilders.delete("/api/user/71"))
                 .andExpect(MockMvcResultMatchers.status().isOk());
         mockMvc.perform(MockMvcRequestBuilders.delete("/api/user/10"))
                 .andExpect(MockMvcResultMatchers.status().isNotFound());

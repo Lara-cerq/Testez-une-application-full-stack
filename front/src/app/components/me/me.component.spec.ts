@@ -64,15 +64,12 @@ describe('MeComponent', () => {
   });
 
   it('should delete SessionInformation', () => {
-    //const navigateSpy = jest.spyOn(router,'navigate');
     //act
     userService.delete(sessionService.sessionInformation!.id.toString());
     component.delete();
     fixture.detectChanges();
     //asserts
     expect(component.delete).toBeTruthy();
-    //expect(sessionService.logOut).toBeTruthy();
-    //expect(router.navigate).toHaveBeenCalledWith(['/'])
   });
 
   it('should back', () => {

@@ -73,7 +73,6 @@ describe('DetailComponent', () => {
   it('should delete', () => {
     //arrange
     component.sessionId="1";
-    const navigateSpy = jest.spyOn(mockRouter,'navigate');
     //act
     sessionApiServiceMock.delete.mockReturnValue(of({}));
     component.delete();

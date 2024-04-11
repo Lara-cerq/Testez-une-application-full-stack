@@ -113,7 +113,7 @@ describe('FormComponent', () => {
     component.sessionForm?.setValue(session);
 
     fixture.detectChanges();
-    //assertss
+    //asserts
     expect(component.sessionForm?.value).toBeTruthy();
     component.submit();
 
@@ -139,7 +139,7 @@ describe('FormComponent', () => {
     component.sessionForm?.setValue(session);
 
     fixture.detectChanges();
-    //assertss
+    //asserts
     expect(component.sessionForm?.value).toBeTruthy();
     component.submit();
 
@@ -147,7 +147,7 @@ describe('FormComponent', () => {
     const routerNavigateSpy = jest.spyOn(component['router'], 'navigate');
 
     component.submit();
-  //asserts
+    //asserts
   expect(snackBarOpenSpy).toHaveBeenCalledWith(
     'Session created !',
     'Close',

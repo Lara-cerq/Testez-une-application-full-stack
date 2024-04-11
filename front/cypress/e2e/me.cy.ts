@@ -33,14 +33,15 @@ describe('Account page', () => {
 
   it('test user information', () => {
 
+    // click to page Account
     cy.get('span.link').contains('Account').click();
 
     cy.url().should('include', '/me');
-
+    // test page user information
     cy.get('mat-card-title h1').should('contain', 'User information');
     cy.get('p').eq(0).should('contain', `Name: ${USER_ADMIN.firstName} ${USER_ADMIN.lastName}`);
     cy.get('p').eq(1).should('contain', `Email: ${USER_ADMIN.email}`);
-
+    // because admin : button delete not exists
     cy.get('button[mat-raised-button]').should('not.exist');
   })
 })
